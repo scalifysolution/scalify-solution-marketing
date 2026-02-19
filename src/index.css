@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 224 50% 7%;
+    --foreground: 210 40% 96%;
+
+    --card: 224 45% 10%;
+    --card-foreground: 210 40% 96%;
+
+    --popover: 224 45% 10%;
+    --popover-foreground: 210 40% 96%;
+
+    --primary: 225 80% 56%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 224 35% 14%;
+    --secondary-foreground: 210 40% 96%;
+
+    --muted: 224 35% 14%;
+    --muted-foreground: 215 20% 55%;
+
+    --accent: 225 90% 65%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 224 30% 16%;
+    --input: 224 30% 16%;
+    --ring: 225 80% 56%;
+
+    --radius: 0.75rem;
+
+    --glow-primary: 225 80% 56%;
+    --glow-accent: 225 90% 65%;
+    --surface-glass: 224 45% 10%;
+
+    --sidebar-background: 224 50% 7%;
+    --sidebar-foreground: 210 40% 96%;
+    --sidebar-primary: 225 80% 56%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 224 35% 14%;
+    --sidebar-accent-foreground: 210 40% 96%;
+    --sidebar-border: 224 30% 16%;
+    --sidebar-ring: 225 80% 56%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-card/60 backdrop-blur-xl border border-border/50 rounded-2xl;
+  }
+
+  .glow-primary {
+    box-shadow: 0 0 40px -10px hsl(var(--primary) / 0.4);
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 40px -10px hsl(var(--accent) / 0.4);
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+  }
+
+  .gradient-border {
+    position: relative;
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28 px-4 md:px-8;
+  }
+
+  .ai-glow-bg {
+    background: radial-gradient(ellipse at center, hsl(var(--primary) / 0.08) 0%, transparent 70%);
+  }
+}

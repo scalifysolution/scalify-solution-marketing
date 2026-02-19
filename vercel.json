@@ -1,0 +1,7 @@
+{
+  "rewrites": [
+    { "source": "/_sgd/:path*", "destination": "/_sgd/:path*" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
+
