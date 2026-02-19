@@ -1,6 +1,6 @@
 {
   "rewrites": [
-    { "source": "/_sgd/:path*", "destination": "/_sgd/:path*" },
+    { "source": "/_sgd/:path*", "destination": "/:path*" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }

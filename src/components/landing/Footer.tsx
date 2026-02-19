@@ -1,9 +1,11 @@
-const Footer = () => (
+const Footer = () => {
+  const base = import.meta.env.BASE_URL || "/";
+  return (
   <footer className="border-t border-border py-10 px-4">
     <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
       <span className="flex items-center">
         <img
-          src="/assets/logo/logo_white.svg"
+          src={`${base}assets/logo/logo_white.svg`}
           alt="Scalify Solutions"
           className="h-8 w-auto"
         />
@@ -35,6 +37,7 @@ const Footer = () => (
       </p>
     </div>
   </footer>
-);
+  );
+};
 
 export default Footer;
