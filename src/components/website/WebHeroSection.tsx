@@ -143,11 +143,13 @@ const WebHeroSection = () => {
                   <input name="subject" required type="text" defaultValue="Website Development Inquiry" placeholder="Subject" className="w-full px-3 py-2.5 rounded-xl bg-secondary border border-border text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50" />
                 </div>
                 {import.meta.env.VITE_RECAPTCHA_SITE_KEY ? (
-                  <div className="w-full flex justify-start">
-                    <ReCAPTCHA
-                      sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
-                      onChange={(token) => setCaptchaToken(token)}
-                    />
+                  <div className="sgd-recaptcha-outer flex justify-start">
+                    <div className="sgd-recaptcha-inner">
+                      <ReCAPTCHA
+                        sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+                        onChange={(token) => setCaptchaToken(token)}
+                      />
+                    </div>
                   </div>
                 ) : (
                   <p className="text-xs text-muted-foreground text-center">

@@ -143,11 +143,13 @@ const LeadFormSection = () => {
             </div>
 
             {import.meta.env.VITE_RECAPTCHA_SITE_KEY ? (
-              <div className="w-full flex justify-start">
-                <ReCAPTCHA
-                  sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
-                  onChange={(token) => setCaptchaToken(token)}
-                />
+              <div className="sgd-recaptcha-outer flex justify-start">
+                <div className="sgd-recaptcha-inner">
+                  <ReCAPTCHA
+                    sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+                    onChange={(token) => setCaptchaToken(token)}
+                  />
+                </div>
               </div>
             ) : (
               <p className="text-xs text-muted-foreground text-center">
