@@ -66,7 +66,7 @@ const AiHeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center section-padding pt-32 overflow-hidden">
+    <section className="relative min-h-screen flex items-start lg:items-center section-padding pt-32 overflow-hidden">
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-accent/10 rounded-full blur-[100px] pointer-events-none" />
 
