@@ -23,7 +23,13 @@ const SocialMediaMarketing = () => (
     {/* ACT 3: Proof & Action */}
     <SocialPackagesSection />
     <BottomLeadForm title="Ready to" highlight="Scale Your Brand?" ctaText="🚀 Let's Grow Together" />
-    <TrustSection />
+    <TrustSection
+      testimonial={{
+        quote:
+          "I hired Scalify because our social was stuck. In weeks, we had a clear content plan, better reach, and leads coming in consistently.",
+        author: "A founder focused on growth",
+      }}
+    />
     <Footer />
     <WhatsAppButton />
   </div>

@@ -182,7 +182,7 @@ const HeroSection = () => {
                   <input name="subject" required type="text" defaultValue="App Development Inquiry" placeholder="Subject" className="w-full px-3 py-2.5 rounded-xl bg-secondary border border-border text-foreground placeholder:text-muted-foreground text-sm focus:outline-none focus:ring-2 focus:ring-primary/50" />
                 </div>
                 {import.meta.env.VITE_RECAPTCHA_SITE_KEY ? (
-                  <div className="flex justify-start">
+                  <div className="w-full overflow-hidden rounded-xl bg-white/95 p-3 flex justify-start">
                     <ReCAPTCHA
                       sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
                       onChange={(token) => setCaptchaToken(token)}

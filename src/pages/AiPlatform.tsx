@@ -30,7 +30,13 @@ const AiPlatform = () => (
     <AiPositioningSection />
     <AiPackagesSection />
     <AiProcessSection />
-    <TrustSection />
+    <TrustSection
+      testimonial={{
+        quote:
+          "Scalify made AI feel practical for us. We automated repetitive work, improved response time, and our team finally had space to focus on what matters.",
+        author: "An operations manager",
+      }}
+    />
     <BottomLeadForm
       title="Ready to Build Your"
       highlight="AI Operations Platform?"

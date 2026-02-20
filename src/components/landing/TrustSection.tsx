@@ -2,13 +2,22 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Shield, Clock, Users, Award, Headphones, RefreshCw } from "lucide-react";
 
+type Testimonial = {
+  quote: string;
+  author: string;
+};
+
+interface TrustSectionProps {
+  testimonial?: Testimonial;
+}
+
 const trustPoints = [
   { icon: Shield, title: "100% Secure & Confidential", desc: "Your idea is safe with us. NDA from day one if you want it." },
   { icon: Clock, title: "Deadlines We Actually Keep", desc: "We commit to timelines and deliver. No ghosting, no excuses." },
   { icon: Users, title: "50+ Businesses Trusted Us", desc: "Startups, agencies & growing businesses across industries." },
   { icon: Award, title: "Quality Over Quantity", desc: "We take fewer projects and give each one everything we've got." },
   { icon: Headphones, title: "We Pick Up the Phone", desc: "Real humans. Real conversations. Not a ticket system." },
-  { icon: RefreshCw, title: "We Improve, Always", desc: "Your app version 1.0 is just the beginning. We make it better every month." },
+  { icon: RefreshCw, title: "We Improve, Always", desc: "Version 1.0 is just the beginning. We make it better every month." },
 ];
 
 const stats = [
@@ -18,7 +27,13 @@ const stats = [
   { value: "<1hr", label: "Response Time" },
 ];
 
-const TrustSection = () => {
+const defaultTestimonial: Testimonial = {
+  quote:
+    "I came to Scalify after 2 bad experiences with other agencies. They didn’t just deliver — they rebuilt my trust in this entire process.",
+  author: "A founder who almost gave up",
+};
+
+const TrustSection = ({ testimonial = defaultTestimonial }: TrustSectionProps) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -31,7 +46,7 @@ const TrustSection = () => {
             Why People <span className="gradient-text">Choose Scalify</span> (and Stay)
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            We're not the cheapest. We're not the biggest. But we're the team that treats your app like it's our own.
+            We're not the cheapest. We're not the biggest. But we're the team that treats your business like it's our own.
           </p>
         </motion.div>
 
@@ -77,9 +92,9 @@ const TrustSection = () => {
           className="glass-card p-8 rounded-2xl text-center glow-accent max-w-2xl mx-auto"
         >
           <p className="text-lg font-heading italic text-foreground mb-3">
-            "I came to Scalify after 2 bad experiences with other agencies. They didn’t just deliver — they rebuilt my trust in this entire process."
+            “{testimonial.quote}”
           </p>
-          <p className="text-sm text-muted-foreground">— A founder who almost gave up</p>
+          <p className="text-sm text-muted-foreground">— {testimonial.author}</p>
         </motion.div>
       </div>
     </section>

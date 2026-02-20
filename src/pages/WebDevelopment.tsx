@@ -20,7 +20,13 @@ const WebDevelopment = () => (
     <WebPackagesSection />
     {/* ACT 3: Proof & Action */}
     <WebProcessSection />
-    <TrustSection />
+    <TrustSection
+      testimonial={{
+        quote:
+          "Our old website looked fine but didn’t convert. Scalify rebuilt it with a clear message, faster performance, and a lead flow that actually works.",
+        author: "A business owner who needed leads",
+      }}
+    />
     <BottomLeadForm title="Ready to" highlight="Grow Your Business?" ctaText="🚀 Let's Build Your Growth Website" />
     <Footer />
     <WhatsAppButton />

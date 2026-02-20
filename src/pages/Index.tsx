@@ -27,7 +27,13 @@ const Index = () => (
     <ExecutionSection />
     {/* ACT 4: Proof & Action */}
     <ResultsSection />
-    <TrustSection />
+    <TrustSection
+      testimonial={{
+        quote:
+          "I came to Scalify after 2 bad experiences with other developers. They didn’t just fix my app — they rebuilt my trust in this entire process.",
+        author: "A founder who almost gave up",
+      }}
+    />
     <BottomLeadForm
       title="Your App Story"
       highlight="Starts Here"

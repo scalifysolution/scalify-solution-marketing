@@ -29,7 +29,13 @@ const CrmDevelopment = () => (
     <CrmSaasSection />
     {/* ACT 4: Action — Let's build yours */}
     <CrmProcessSection />
-    <TrustSection />
+    <TrustSection
+      testimonial={{
+        quote:
+          "We were losing leads due to follow-up chaos. Scalify helped us streamline the pipeline, automate reminders, and finally get clarity in sales.",
+        author: "A sales team lead",
+      }}
+    />
     <BottomLeadForm
       title="Ready to Let AI"
       highlight="Run Your Sales?"
