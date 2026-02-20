@@ -30,7 +30,7 @@ const Navbar = () => {
           href="https://wa.me/918222822708"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-primary text-primary-foreground px-5 py-2 rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity"
+          className="bg-primary text-primary-foreground px-3 sm:px-5 py-2 rounded-lg text-xs sm:text-sm font-semibold hover:opacity-90 transition-opacity text-center leading-tight"
         >
           Get Free Strategy Call
         </a>
