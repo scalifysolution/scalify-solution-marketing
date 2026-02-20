@@ -77,7 +77,7 @@ const TrustSection = () => {
           className="glass-card p-8 rounded-2xl text-center glow-accent max-w-2xl mx-auto"
         >
           <p className="text-lg font-heading italic text-foreground mb-3">
-            "I came to Scalify after 2 bad experiences with other developers. They didn't just fix my app — they rebuilt my trust in this entire process."
+            "I came to Scalify after 2 bad experiences with other agencies. They didn’t just deliver — they rebuilt my trust in this entire process."
           </p>
           <p className="text-sm text-muted-foreground">— A founder who almost gave up</p>
         </motion.div>
