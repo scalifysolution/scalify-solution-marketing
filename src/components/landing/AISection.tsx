@@ -37,7 +37,7 @@ const AISection = () => {
   return (
     <section id="ai" className="section-padding relative overflow-hidden" ref={ref}>
       <div className="absolute inset-0 ai-glow-bg pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[150px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[420px] h-[420px] md:w-[600px] md:h-[600px] bg-accent/5 rounded-full blur-[110px] md:blur-[150px] pointer-events-none" />
 
       <div className="container mx-auto relative z-10">
         <motion.div

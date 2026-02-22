@@ -83,8 +83,8 @@ const CrmHeroSection = () => {
 
   return (
     <section className="relative min-h-screen flex items-start lg:items-center section-padding pt-32 overflow-hidden">
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-accent/10 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[520px] h-[420px] md:w-[800px] md:h-[600px] bg-primary/10 rounded-full blur-[90px] md:blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[280px] h-[280px] md:w-[400px] md:h-[400px] bg-accent/10 rounded-full blur-[70px] md:blur-[100px] pointer-events-none" />
 
       <div className="container mx-auto grid lg:grid-cols-2 gap-12 items-start relative z-10">
         <div className="flex flex-col justify-center lg:min-h-[600px]">
