@@ -113,7 +113,7 @@
   }
 
   .section-padding {
-    @apply py-20 md:py-28 px-4 md:px-8;
+    @apply py-16 sm:py-20 md:py-28 px-3 sm:px-4 md:px-8;
   }
 
   .ai-glow-bg {
@@ -145,6 +145,18 @@
   @media (max-width: 340px) {
     .sgd-recaptcha-inner {
       transform: scale(0.86);
+    }
+  }
+
+  @media (max-width: 320px) {
+    .sgd-recaptcha-inner {
+      transform: scale(0.82);
+    }
+  }
+
+  @media (max-width: 300px) {
+    .sgd-recaptcha-inner {
+      transform: scale(0.78);
     }
   }
 
