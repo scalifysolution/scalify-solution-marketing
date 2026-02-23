@@ -58,7 +58,7 @@ const AiPackagesSection = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="section-padding" ref={ref}>
+    <section id="services" className="section-padding" ref={ref}>
       <div className="container mx-auto max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

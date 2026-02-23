@@ -52,7 +52,7 @@ const SocialPackagesSection = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="section-padding" ref={ref}>
+    <section id="services" className="section-padding" ref={ref}>
       <div className="container mx-auto max-w-5xl">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="text-center mb-6">
           <p className="text-sm text-primary font-medium mb-3">Two plans. One promise.</p>

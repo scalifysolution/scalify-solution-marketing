@@ -29,7 +29,7 @@ const DifferentiatorSection = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="services" className="section-padding" ref={ref}>
+    <section id="about" className="section-padding" ref={ref}>
       <div className="container mx-auto max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

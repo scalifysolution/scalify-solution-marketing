@@ -39,7 +39,7 @@ const SocialWhyScalifySection = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="section-padding" ref={ref}>
+    <section id="about" className="section-padding" ref={ref}>
       <div className="container mx-auto max-w-4xl">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} className="text-center mb-12">
           <p className="text-sm text-primary font-medium mb-3">The Scalify difference...</p>

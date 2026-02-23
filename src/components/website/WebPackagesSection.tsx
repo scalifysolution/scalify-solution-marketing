@@ -4,6 +4,28 @@ import { Globe, Smartphone, Search, MapPin, Share2, MessageSquare, Phone as Phon
 
 const packages = [
   {
+    name: "Custom Website (Premium)",
+    tagline: "Tailor-made design + features. Pricing decided on call.",
+    price: "Discuss",
+    priceNote: "Pricing on discussion",
+    monthly: null,
+    monthlyNote: null,
+    features: [
+      { icon: PenTool, text: "100% Custom UI/UX (No Templates)" },
+      { icon: Settings, text: "Custom Features / Integrations" },
+      { icon: Zap, text: "Speed & Performance Optimized" },
+      { icon: Search, text: "SEO-Friendly Structure" },
+      { icon: Lock, text: "SSL + Analytics Setup" },
+      { icon: Target, text: "Conversion-Focused Pages" },
+      { icon: FileText, text: "CMS / Blog (Optional)" },
+      { icon: Users, text: "Built for Your Exact Business Model" },
+    ],
+    bestFor: "Businesses that want a custom website (unique design + custom functionality) with pricing discussed based on scope.",
+    cta: "📞 Discuss Pricing",
+    badge: "Custom",
+    highlight: true,
+  },
+  {
     name: "Simple Business Website",
     tagline: "Get online. Look professional. Start now.",
     price: "₹25,000",
@@ -45,7 +67,7 @@ const packages = [
     bestFor: "Growing businesses that want to rank on Google and manage their own content without calling a developer.",
     cta: "🔥 Build My SEO Website",
     badge: "Most Popular",
-    highlight: true,
+    highlight: false,
   },
   {
     name: "Website + Growth Plan",
@@ -76,19 +98,19 @@ const WebPackagesSection = () => {
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="section-padding" ref={ref}>
+    <section id="services" className="section-padding" ref={ref}>
       <div className="container mx-auto max-w-6xl">
         <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="text-center mb-6">
           <p className="text-sm text-primary font-medium mb-3">Choose your level...</p>
           <h2 className="text-3xl md:text-4xl font-heading font-bold mb-4">
-            Three Plans. <span className="gradient-text">One Promise: Results.</span>
+            Plans For Every Business — <span className="gradient-text">Including Custom Websites.</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Whether you need a simple site or a full growth engine — we've got you covered.
+            Need something unique (custom design, special features, integrations)? We’ll discuss your requirements and share a custom quote.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6 mt-12 mb-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12 mb-12">
           {packages.map((pkg, i) => (
             <motion.div
               key={pkg.name}
