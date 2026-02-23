@@ -1,10 +1,32 @@
-import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { useEffect, useMemo, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const base = import.meta.env.BASE_URL || "/";
+  const location = useLocation();
   const [open, setOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const MAIN_SITE = "https://www.scalifysolutions.com";
+
+  const SERVICE_ROUTES = useMemo(
+    () => [
+      { label: "App Development", to: "/app-development" },
+      { label: "CRM Development", to: "/crm-development" },
+      { label: "AI Platform", to: "/ai-platform" },
+      { label: "Website Development", to: "/website-development" },
+      { label: "Social Media Marketing", to: "/social-media-marketing" },
+    ],
+    []
+  );
+
+  const currentPath = location.pathname || "/app-development";
+  const servicesLink = useMemo(() => `${currentPath}#services`, [currentPath]);
+
+  useEffect(() => {
+    setOpen(false);
+    setServicesOpen(false);
+  }, [location.pathname, location.hash]);
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
@@ -25,9 +47,27 @@ const Navbar = () => {
           <a href={`${MAIN_SITE}/about`} className="hover:text-primary transition-colors">
             About Us
           </a>
-          <a href={`${MAIN_SITE}#services`} className="hover:text-primary transition-colors">
-            Services
-          </a>
+          <div className="relative group">
+            <Link
+              to={servicesLink}
+              className="flex items-center gap-1 hover:text-primary transition-colors"
+            >
+              Services <ChevronDown size={16} />
+            </Link>
+            <div className="absolute left-0 top-full pt-3 hidden group-hover:block">
+              <div className="glass-card p-2 rounded-xl w-64">
+                {SERVICE_ROUTES.map((s) => (
+                  <Link
+                    key={s.to}
+                    to={`${s.to}#home`}
+                    className="block px-3 py-2 rounded-lg text-sm text-foreground/90 hover:bg-secondary/60 transition-colors"
+                  >
+                    {s.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
           <a href={`${MAIN_SITE}/contact`} className="hover:text-primary transition-colors">
             Contact Us
           </a>
@@ -65,9 +105,35 @@ const Navbar = () => {
             <a href={`${MAIN_SITE}/about`} className="block px-3 py-2 rounded-lg hover:bg-secondary/40">
               About Us
             </a>
-            <a href={`${MAIN_SITE}#services`} className="block px-3 py-2 rounded-lg hover:bg-secondary/40">
-              Services
-            </a>
+            <button
+              type="button"
+              className="w-full flex items-center justify-between px-3 py-2 rounded-lg hover:bg-secondary/40"
+              onClick={() => setServicesOpen((v) => !v)}
+              aria-expanded={servicesOpen}
+            >
+              <span>Services</span>
+              <ChevronDown
+                size={16}
+                className={
+                  servicesOpen
+                    ? "rotate-180 transition-transform"
+                    : "transition-transform"
+                }
+              />
+            </button>
+            {servicesOpen ? (
+              <div className="pl-3 space-y-1">
+                {SERVICE_ROUTES.map((s) => (
+                  <Link
+                    key={s.to}
+                    to={`${s.to}#home`}
+                    className="block px-3 py-2 rounded-lg text-sm text-foreground/90 hover:bg-secondary/40"
+                  >
+                    {s.label}
+                  </Link>
+                ))}
+              </div>
+            ) : null}
             <a href={`${MAIN_SITE}/contact`} className="block px-3 py-2 rounded-lg hover:bg-secondary/40">
               Contact Us
             </a>
