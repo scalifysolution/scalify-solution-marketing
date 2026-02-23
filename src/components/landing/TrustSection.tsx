@@ -21,10 +21,10 @@ const trustPoints = [
 ];
 
 const stats = [
-  { value: "50+", label: "Projects Delivered" },
-  { value: "98%", label: "Clients Stay With Us" },
-  { value: "30+", label: "Industries Covered" },
-  { value: "<1hr", label: "Response Time" },
+  { value: "20+", label: "Projects Completed" },
+  { value: "99%", label: "Customer Satisfaction" },
+  { value: "4Y+", label: "Industry Experience (in years)" },
+  { value: "1Y", label: "Free Support (in years)" },
 ];
 
 const defaultTestimonial: Testimonial = {
